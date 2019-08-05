@@ -1,19 +1,54 @@
+require 'pry'
+
 class Owner
   attr_reader :species, :name
-  attr_accessor :cats
+  
+  
  
  @@all = []
 
 
   def initialize(name)
-    @cats = []
     @name = name
     @species = species
     @@all << self
   end
   
+  
+  def sell_pets
+    self.dogs.each do |pet| 
+    pet.mood = "nervous"
+    pet.owner = nil
+    end
+    self.cats.each do |pet|
+      pet.mood = "nervous"
+      pet.owner = nil
+    end
+  end
+  
+  def list_pets
+    "I have #{dogs.size} dog(s), and #{cats.size} cat(s)."
+  end
+  
+  def walk_dogs
+      self.dogs.each do |dog|
+      dog.mood = "happy"
+    end
+  end
+
+ def feed_cats
+      self.cats.each do |cat|
+      cat.mood = "happy"
+    end
+  end
+  
+  
   def buy_cat(name)
-  @cats << Cats.new(name)
+  cat = Cat.new(name,self)
+  end
+  
+   def buy_dog(name)
+  dog = Dog.new(name,self)
   end
   
   def cats
