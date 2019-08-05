@@ -10,6 +10,10 @@ class Cat
     @@all << self
   end
   
+  def cats
+    @cats
+  end
+  
   def self.all
     @@all
   end
