@@ -2,8 +2,12 @@ require 'pry'
 
 class Owner
   attr_reader :species, :name
+<<<<<<< HEAD
   
   
+=======
+  attr_accessor 
+>>>>>>> ee2311c0526c9e19f8c4dca202ede2ca8219b48f
  
  @@all = []
 
@@ -45,10 +49,13 @@ class Owner
   
   def buy_cat(name)
   cat = Cat.new(name,self)
+<<<<<<< HEAD
   end
   
    def buy_dog(name)
   dog = Dog.new(name,self)
+=======
+>>>>>>> ee2311c0526c9e19f8c4dca202ede2ca8219b48f
   end
   
   def cats
